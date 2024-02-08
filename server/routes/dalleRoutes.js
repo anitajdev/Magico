@@ -11,7 +11,7 @@ const openai = new OpenAI({
 });
 
 router.route('/').get((req, res) => {
-    res.status(200).json({ message: "Hello from DALL.E ROUTES" })
+    res.status(200).json({ message: "Hello from DALL-E ROUTES" })
 });
 
 router.route('/').post(async (req, res) => {
@@ -24,8 +24,8 @@ router.route('/').post(async (req, res) => {
             size: '1024x1024',
             response_format: 'b64_json'
         });
-        const image = response.data[0].b64_json;
 
+        const image = response.data[0].b64_json;
         res.status(200).json({ photo: image });
 
     } catch (error) {
